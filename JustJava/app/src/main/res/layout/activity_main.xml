@@ -32,7 +32,6 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:text="-"
-
             android:onClick="decrement"
             android:layout_marginRight="8dp"/>
 
@@ -68,13 +67,13 @@
         android:layout_height="wrap_content"
         android:fontFamily="monospace"
         android:paddingBottom="16dp"
-        android:text="price"
+        android:text="order summary"
         android:textAllCaps="true"
         android:textColor="#363636"
         android:textSize="16sp" />
 
     <TextView
-        android:id="@+id/price_text_view"
+        android:id="@+id/order_summary_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="$0"
