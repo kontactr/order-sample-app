@@ -10,6 +10,8 @@ package com.example.android.justjava;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.text.NumberFormat;
@@ -53,7 +55,11 @@ public class MainActivity extends AppCompatActivity {
 
     private String createOrderSummary(int number)
     {
-        return "Name: Yash Gandhi" +
+        boolean hasChecked = ((CheckBox)findViewById(R.id.cb_whipped_cream)).isChecked();
+
+        return "Name: " + ((EditText)findViewById(R.id.text_box_name)).getText().toString()+
+            "\nAdd Whipped cream? "+hasChecked+
+                "\nChocolate? "+((CheckBox)findViewById(R.id.cb_chocolate)).isChecked()+
             "\nQuantity: " + number +
             "\nTotal: " + calculatePrice() + "$" +
             "\nThank You!";
