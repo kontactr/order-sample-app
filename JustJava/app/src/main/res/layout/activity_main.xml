@@ -67,6 +67,7 @@
 
             <Button
 
+                android:id="@+id/btn_dec"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_marginRight="8dp"
@@ -78,12 +79,13 @@
                 android:id="@+id/quantity_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
+                android:text="2"
                 android:textColor="@android:color/black"
                 android:textSize="16sp" />
 
             <Button
 
+                android:id="@+id/btn_inc"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_marginLeft="8dp"

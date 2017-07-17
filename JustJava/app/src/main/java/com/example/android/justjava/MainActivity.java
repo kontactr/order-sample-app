@@ -7,12 +7,16 @@
 package com.example.android.justjava;
 
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.NumberFormat;
 
@@ -21,7 +25,7 @@ import java.text.NumberFormat;
  */
 public class MainActivity extends AppCompatActivity {
 
-    int quantity = 0;
+    int quantity = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +38,18 @@ public class MainActivity extends AppCompatActivity {
      */
     public void submitOrder(View view) {
         //String priceMessage ="Total: $" + calculatePrice() + "\n"+"Thank You!!!";
-        displayMessage(createOrderSummary(quantity));
+       // displayMessage(createOrderSummary(quantity));
+        Log.v("Main Activity: ","Intent Start");
+        //Intent intent = new Intent(Intent.ACTION_SEND);
+        //intent.setType("*/*");
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:")); // only email apps should handle this
+        intent.putExtra(Intent.EXTRA_SUBJECT,"Order Summary!!!");
+        intent.putExtra(Intent.EXTRA_TEXT,createOrderSummary(quantity) );
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
+        Log.v("Main Activity: ","Intent Stop");
 
         // display(quantity);
        // displayPrice(quantity * 5);
@@ -67,18 +82,27 @@ public class MainActivity extends AppCompatActivity {
 
     private int calculatePrice()
     {
-        return (quantity * 5);
+        int price = quantity * 5;
+        if (((CheckBox)findViewById(R.id.cb_chocolate)).isChecked())
+            price += (quantity * 2);
+        if (((CheckBox)findViewById(R.id.cb_whipped_cream)).isChecked())
+            price += (quantity * 1);
+        return (price) ;
     }
 
     public  void increment(View view){
-
-        quantity = 1 + quantity ;
+        if (quantity > 99 )
+            Toast.makeText(MainActivity.this, "Maximum 100 allowed", Toast.LENGTH_SHORT).show();
+        else
+            quantity += 1;
         displayQuantity(""+quantity);
     }
 
     public  void decrement(View view){
-
-        quantity = quantity - 1;
+        if(quantity == 1)
+            Toast.makeText(MainActivity.this, "Minimum 1 required", Toast.LENGTH_SHORT).show();
+        else
+            quantity = quantity - 1;
         displayQuantity(""+quantity);
     }
 
