@@ -58,7 +58,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void Calculation(View v) {
-        flag = true;
+        flag = false;
+        String result = "";
         Log.i("Process_operator", operator);
         TextView tv = (TextView) findViewById(R.id.input_text);
         tv.setText("Done");
@@ -68,13 +69,15 @@ public class MainActivity extends AppCompatActivity {
                 if (input1.contains(".") == false && input2.contains(".") == false)
                 {
                     Log.i("Result ","if");
-                    tv.setText(String.valueOf(Long.parseLong(input1) + Long.parseLong(input2)));
+                    result = String.valueOf(Long.parseLong(input1) + Long.parseLong(input2));
+                    tv.setText(result);
 
 
                 }
                 else
                 {
-                    tv.setText(String.valueOf(Double.parseDouble(input1) + Double.parseDouble(input2)));
+                    result = String.valueOf(Double.parseDouble(input1) + Double.parseDouble(input2));
+                    tv.setText(result);
 
                 }
                 break;
@@ -83,27 +86,30 @@ public class MainActivity extends AppCompatActivity {
                 if (input1.contains(".") == false && input2.contains(".") == false)
                 {
                     Log.i("Result ","if");
-                    tv.setText(String.valueOf(Long.parseLong(input1) - Long.parseLong(input2)));
+                    result = String.valueOf(Long.parseLong(input1) - Long.parseLong(input2));
+                    tv.setText(result);
 
 
                 }
                 else
                 {
-                    tv.setText(String.valueOf(Double.parseDouble(input1) - Double.parseDouble(input2)));
+                    result = String.valueOf(Double.parseDouble(input1) - Double.parseDouble(input2));
+                    tv.setText(result);
 
                 }
                 break;
             case "*":
                 if (input1.contains(".") == false && input2.contains(".") == false)
                 {
-
-                    tv.setText(String.valueOf(Long.parseLong(input1) * Long.parseLong(input2)));
+                    result = String.valueOf(Long.parseLong(input1) * Long.parseLong(input2));
+                    tv.setText(result);
 
 
                 }
                 else
                 {
-                    tv.setText(String.valueOf(Double.parseDouble(input1) * Double.parseDouble(input2)));
+                    result = String.valueOf(Double.parseDouble(input1) * Double.parseDouble(input2));
+                    tv.setText(result);
 
                 }
                 break;
@@ -111,19 +117,20 @@ public class MainActivity extends AppCompatActivity {
             case "/":
                 if (input1.contains(".") == false && input2.contains(".") == false)
                 {
-
-                    tv.setText(String.valueOf(Long.parseLong(input1) / Long.parseLong(input2)));
+                    result = String.valueOf(Long.parseLong(input1) / Long.parseLong(input2));
+                    tv.setText(result);
 
 
                 }
                 else
                 {
-                    tv.setText(String.valueOf(Double.parseDouble(input1) / Double.parseDouble(input2)));
+                    result = String.valueOf(Double.parseDouble(input1) / Double.parseDouble(input2));
+                    tv.setText(result);
 
                 }
                 break;
         }
-        input1 = "";
+        input1 = result;
         input2 = "";
 
     }
@@ -178,5 +185,12 @@ public class MainActivity extends AppCompatActivity {
      }
         input1 = "";
         input2 = "";
+    }
+    protected void reset(View v)
+    {
+        input1 = "";
+        input2 = "";
+        flag = true;
+        ((TextView)findViewById(R.id.input_text)).setText("0");
     }
 }
