@@ -102,7 +102,7 @@
             android:layout_marginTop="16dp"
             android:fontFamily="monospace"
             android:paddingBottom="16dp"
-            android:text="order summary"
+            android:text="@string/order_sum"
             android:textAllCaps="true"
             android:textColor="#363636"
             android:textSize="16sp" />
@@ -120,7 +120,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16sp"
             android:onClick="submitOrder"
-            android:text="order"
+            android:text="@string/order"
             android:textAllCaps="true" />
     </LinearLayout>
 </ScrollView>

@@ -1,3 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Just Java</string>
+    <string name="order" translatable="false">order</string>
+    <string name="hello" translatable="false">Hello</string>
+    <string name="Welcome">Welcome</string>
+    <string name="order_sum" translatable="false">order summary</string>
 </resources>
