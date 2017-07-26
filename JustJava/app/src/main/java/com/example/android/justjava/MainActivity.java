@@ -72,12 +72,12 @@ public class MainActivity extends AppCompatActivity {
     {
         boolean hasChecked = ((CheckBox)findViewById(R.id.cb_whipped_cream)).isChecked();
 
-        return "Name: " + ((EditText)findViewById(R.id.text_box_name)).getText().toString()+
-            "\nAdd Whipped cream? "+hasChecked+
-                "\nChocolate? "+((CheckBox)findViewById(R.id.cb_chocolate)).isChecked()+
-            "\nQuantity: " + number +
+        return getString(R.string.Name,((EditText)findViewById(R.id.text_box_name)).getText().toString())  +
+            "\n" + getString(R.string.Whipped ,hasChecked)+
+                "\n"+ getString(R.string.Chocolate) +" ?" +((CheckBox)findViewById(R.id.cb_chocolate)).isChecked()+
+            "\n"+ getString(R.string.quantity)  + " : " + number +
             "\nTotal: " + calculatePrice() + "$" +
-            "\nThank You!";
+            "\n" + getString(R.string.thank_you);
     }
 
     private int calculatePrice()
@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
 
     public  void increment(View view){
         if (quantity > 99 )
-            Toast.makeText(MainActivity.this, "Maximum 100 allowed", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, getString(R.string.too_many_coffees), Toast.LENGTH_SHORT).show();
         else
             quantity += 1;
         displayQuantity(""+quantity);
@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
 
     public  void decrement(View view){
         if(quantity == 1)
-            Toast.makeText(MainActivity.this, "Minimum 1 required", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, getString(R.string.too_few_coffees), Toast.LENGTH_SHORT).show();
         else
             quantity = quantity - 1;
         displayQuantity(""+quantity);

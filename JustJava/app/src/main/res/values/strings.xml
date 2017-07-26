@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="order" translatable="false">order</string>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Just Java</string>
+    <string name="order">order</string>
     <string name="hello" translatable="false">Hello</string>
-    <string name="Welcome">Welcome</string>
+    <string name="Name" >Name <xliff:g id="name" example="Amy">%s</xliff:g></string>
+    <string name="Toppings">Toppings</string>
+    <string name="Whipped" >Whipped Cream <xliff:g id="addWhippedCream" example="true">%b</xliff:g></string>
+    <string name="Chocolate">Chocolate</string>
+    <string name="quantity">quantity</string>
     <string name="order_sum" translatable="false">order summary</string>
+    <string name="thank_you">Thank You!!!</string>
+    <string name="too_many_coffees">You cannot have more than 100 coffees.</string>
+    <string name="too_few_coffees">You cannot have less than 1 coffee.</string>
 </resources>

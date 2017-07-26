@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -14,19 +15,15 @@
         tools:context="com.example.android.justjava.MainActivity">
 
         <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="Name "
-            android:inputType="text"
             android:id="@+id/text_box_name"
-            />
+            style="@style/HeaderTextStyle"
+            android:hint="Name"
+            android:inputType="text" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/HeaderTextStyle"
             android:layout_marginBottom="16dp"
-            android:text="Toppings"
-            android:textAllCaps="true" />
+            android:text="@string/Toppings" />
 
 
         <CheckBox
@@ -43,22 +40,19 @@
             android:id="@+id/cb_chocolate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Chocolate"
+            android:layout_marginBottom="16dp"
             android:fontFamily="sans-serif"
             android:paddingLeft="24dp"
-            android:textSize="16sp"
-            android:layout_marginBottom="16dp"/>
+            android:text="@string/Chocolate"
+            android:textSize="16sp" />
 
         <TextView
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/HeaderTextStyle"
             android:fontFamily="monospace"
             android:paddingBottom="16dp"
-            android:text="quantity"
-            android:textAllCaps="true"
-            android:textColor="#363636"
-            android:textSize="16sp" />
+            android:text="@string/quantity"
+            android:textColor="#363636"></TextView>
+
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -66,7 +60,6 @@
             android:orientation="horizontal">
 
             <Button
-
                 android:id="@+id/btn_dec"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
@@ -77,14 +70,11 @@
 
             <TextView
                 android:id="@+id/quantity_text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/HeaderTextStyle"
                 android:text="2"
-                android:textColor="@android:color/black"
-                android:textSize="16sp" />
+                android:textColor="@android:color/black" />
 
             <Button
-
                 android:id="@+id/btn_inc"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
@@ -97,23 +87,19 @@
 
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/HeaderTextStyle"
             android:layout_marginTop="16dp"
             android:fontFamily="monospace"
             android:paddingBottom="16dp"
             android:text="@string/order_sum"
-            android:textAllCaps="true"
-            android:textColor="#363636"
-            android:textSize="16sp" />
+
+            android:textColor="#363636" />
 
         <TextView
             android:id="@+id/order_summary_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/HeaderTextStyle"
             android:text="$0"
-            android:textColor="@android:color/black"
-            android:textSize="16sp" />
+            android:textColor="@android:color/black" />
 
         <Button
             android:layout_width="wrap_content"

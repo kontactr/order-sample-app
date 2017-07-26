@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="order_sum">order summary</string>
-    <string name="Welcome"></string>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Just Java</string>
+    <string name="quantity">Cantidad</string>
+    <string name="Name">Nombre <xliff:g id="name" example="Amy">%s</xliff:g></string>
+    <string name="Toppings">Ingredientes</string>
+    <string name="order">Ordenar</string>
+    <string name="Chocolate">Chocolate</string>
+    <string name="thank_you">¡Gracias!</string>
+    <string name="Whipped">Agregue la crema batida? <xliff:g id="addWhippedCream" example="true">%b</xliff:g></string>
+    <string name="too_many_coffees">No se pueden pedir más de 100 cafés.</string>
+    <string name="too_few_coffees">No se pueden pedir menos de 1 café.</string>
 </resources>
